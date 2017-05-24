@@ -1,0 +1,6 @@
+<%= form_for @product, url: {action: "create_product"} do |f| %> 
+	<p>Name: <%= f.text_field :name %></p>
+	<p>Price: <%= f.text_field :price %></p>
+	<%= hidden_field_tag :category_id, @category.id %>
+	<p><%= f.submit %></p>
+<% end %>
