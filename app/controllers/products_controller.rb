@@ -25,6 +25,12 @@ class ProductsController < ApplicationController
   	end
   end
 
+  def products_list
+    @category = Category.find params[:id]
+    @products = Product.where(category_id: @category.id)
+    
+  end
+
 private
 	
   def product_params
