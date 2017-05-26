@@ -4,16 +4,20 @@ class ProductsController < ApplicationController
   end
 
   def create
-  	byebug
   	@product = Product.new(product_params)
   	if @product.save!
   		redirect_to "/"
   	end
   end
 
-  def category_product
+  def new_category_product
   	@category = Category.find params[:id]
   	@product = Product.new
+  end
+
+  def products_list
+    @category = Category.find params[:id]
+    @products = Product.where(category_id: @category.id)
   end
 
   def create_product
