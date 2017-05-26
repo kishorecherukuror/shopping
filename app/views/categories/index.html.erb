@@ -22,10 +22,10 @@
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
         <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td>
-          <%= link_to "Add Product", category_product_product_path(category) %>
+          <%= link_to "Add Product", new_category_product_product_path(category) %>
         </td>
         <td>
-          <%= link_to "products" ,"" %>
+          <%= link_to "products" , products_list_category_url(category) %>
         </td>
       </tr>
     <% end %>
