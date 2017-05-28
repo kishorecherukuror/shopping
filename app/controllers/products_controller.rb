@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
   def category_product
   	@category = Category.find params[:id]
   	@product = Product.new
+    @categories = Category.all
   end
 
   def create_product
