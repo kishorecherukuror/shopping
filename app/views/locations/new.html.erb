@@ -1,0 +1,11 @@
+<%= form_for(@location) do |f| %>
+	<p>City : <%= f.text_field :city %></p>
+	<p>State:<%= f.text_field :state %></p>
+
+	<%= f.fields_for :stores do |ff| %>
+	<h3>Add Store</h3>
+	<p>Area : <%= ff.text_field :area %></p>
+	<p>Pincode : <%= ff.text_field :pincode %></p>
+	<% end %>
+	<p><%= f.submit %></p>
+<% end %>

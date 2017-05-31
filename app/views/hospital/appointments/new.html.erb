@@ -1,0 +1,7 @@
+<%= simple_form_for [:hospital,@appointment] do |f| %>
+  <%= f.input :appointment_date %>
+  <%= f.input :physician_id,:collection => @physicians,:value_method => :id,:label => "Physician" ,:include_blank => true %>
+  <%= f.input :patient_id,:collection => @patients,:value_method => :id,:label => "Patient" ,:include_blank => true %>
+  <%= f.button :submit %>
+
+<% end %>

@@ -5,8 +5,10 @@ class ProductsController < ApplicationController
 
   def create
   	@product = Product.new(product_params)
-  	if @product.save!
+  	if @product.save
   		redirect_to "/"
+    else 
+      render 'new'
   	end
   end
 
@@ -23,7 +25,7 @@ class ProductsController < ApplicationController
   def create_product
   	@category = Category.find params[:category_id]
   	@product = Product.new(product_params)
-  	if @product.save!
+  	if @product.save
   		@category.products << @product
   		redirect_to "/"
   	end

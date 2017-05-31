@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :hospital do
+    resources :physicians, only: [:new,:create,:index]
+    resources :patients, only: [:new,:create,:index]
+    resources :appointments, only: [:new,:create,:index]
+  end
+
+  resources :locations, only: [:new,:create]
   resources :products, only: [:new,:create, :edit ] do
   	member do
   		get 'new_category_product'
